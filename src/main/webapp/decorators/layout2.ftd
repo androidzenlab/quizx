@@ -1,0 +1,39 @@
+<#assign s=JspTaglibs["http://www.springframework.org/tags"] />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Subscribe to CosmoFarmer.com</title>
+	<link href="${springMacroRequestContext.getContextPath()}/css/global.css" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 6]>
+	<link href="${springMacroRequestContext.getContextPath()}/css/ie.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	 	<title>${title}</title>
+	${head}
+</head>
+<body id="feature" class="col2"  onload="initialize()">
+<div id="wrapper">
+  <div id="banner">
+    <div id="background"><p class="logo">CosmoFarmer 2.0</p>
+      <div id="nav">
+        <ul>
+          <li><a href="home.htm" <#if homeHighlighted??>id="${homeHighlighted}"</#if>><@s.message code="topbar.home"/></a></li>
+          <li><a href="admin/adminHome.htm" <#if adminHighlighted??>id="${adminHighlighted}"</#if>><@s.message code="topbar.admin"/></a></li>
+          <li><a href="quiz.htm" <#if quizHighlighted??>id="${quizHighlighted}"</#if>><@s.message code="topbar.quiz"/></a></li>
+        </ul>          
+	<br class="clear"  />
+      </div>
+      <!-- end nav -->
+    </div>
+    <!-- end background -->
+  </div>
+  <!-- end banner -->
+  
+  <!-- start main -->
+  ${body}    
+  <!-- end main -->
+  
+  <address id="copyright">Copyright 2012, HappyQuizCompany </address>
+</div>
+<!-- end wrapper -->
+</body>
+</html>

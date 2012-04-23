@@ -1,0 +1,36 @@
+Hi Victor,
+
+As discussed, below is the server side function and web service interface need to implemented in this version.
+
+1.Provide web sevice to client app, to transfer categories and quizs.
+2.use spring security to mangage administrator login.
+3.admin function for categorys, quizs
+    3.1 uploaded
+    3.2 modify
+    3.3 delete
+    3.4 search
+
+quiz object send through webservice {quizid, versionnumber, question, correctanswer, answer2, answer3, answer4}
+
+restful webservice:
+1.get categories list.
+http://localhost/quizx/ws/categorys
+return: all the categorys objects saved in a list. category object include  {categoryid, categoryname, categoryimageurl, newestversionnumber}.
+
+2.get categorys version need to update.
+http://localhost/quizx/ws/category/{id}/{clientversion}
+return: a list contain the the version number need to updated. For example, current server number include 1,2,3,5 . client version number is 2, 
+request should be http://localhost/quizx/ws/category/{id}/2, return is {3, 5}
+
+3.get quizs belong to a certain category and certain version
+http://localhost/quizx/ws/quizs/{categoryId}/{categoryversion}
+return: all the quizs belong to this category with a certain version number
+
+4.get a certain quiz
+http://localhost/quizx/ws/quiz/{quizId}
+
+Please let me know if you have any question~
+
+Cheers
+
+Ryan

@@ -1,0 +1,9 @@
+<ehcache>
+	<diskStore path="java.io.tmp" />
+	<defaultCache maxElementsInMemory="100" eternal="false"
+		timeToIdleSeconds="1800" timeToLiveSeconds="1800" overflowToDisk="true" />
+		
+	<cache name="azl.quizx.domain.Category" maxElementsInMemory="100"
+		eternal="false" timeToIdleSeconds="1800" timeToLiveSeconds="1800"
+		overflowToDisk="true" />
+</ehcache>

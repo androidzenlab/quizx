@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/login/*</pattern>
+    </excludes>
+
+    <decorator name="layout1" page="layout1.ftd">
+        <pattern>/admin/adminHome.htm</pattern>
+        <pattern>/admin/category.htm</pattern>
+        <pattern>/admin/categoryEdit.htm</pattern>
+        <pattern>/admin/categoryVersion.htm</pattern>
+        <pattern>/admin/quiz.htm</pattern>
+        <pattern>/admin/quizEdit.htm</pattern>
+        <pattern>/admin/user.htm</pattern>
+        <pattern>/admin/quizBulk.htm</pattern>
+        <pattern>/admin/quizSearch.htm</pattern>
+        <pattern>/admin/categoryVersion.htm</pattern>
+    </decorator>
+
+    <decorator name="layout2" page="layout2.ftd">
+        <pattern>/home.htm</pattern>
+        <pattern>/quiz.htm</pattern>
+    </decorator>
+
+</decorators>

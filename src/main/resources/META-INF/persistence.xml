@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+  <persistence-unit name="hibernatePersistenceUnit" transaction-type="RESOURCE_LOCAL">
+  	<properties>
+		  <property name="hibernate.hbm2ddl.auto" value="validate" />  
+ <!-- 	 <property name="hibernate.hbm2ddl.auto" value="create" />-->
+	 
+
+		<!-- 		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />-->
+		<!-- 2nd level cache -->
+<!-- 		<property name="hibernate.cache.provider_class"
+			value="net.sf.ehcache.hibernate.SingletonEhCacheProvider" />
+		<property name="hibernate.cache.region.factory_class" 
+			value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+		<property name="hibernate.cache.use_second_level_cache" value="true" />
+
+		<property name="hibernate.cache.use_query_cache" value="true"/>			
+		<property name="hibernate.cache.provider_configuration" value="/ehcache.xml" />
+		<property name="hibernate.generate_statistics" value="true" /> -->
+	</properties>
+  </persistence-unit>
+
+</persistence>

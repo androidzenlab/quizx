@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <debug />
+
+    <global-method-security pre-post-annotations="enabled" />
+
+    <http pattern="/static/**" security="none"/>
+    <http pattern="/home.htm" security="none"/> 
+
+    <http use-expressions="true">
+      <!--   <intercept-url pattern="/secure/extreme/**" access="hasRole('supervisor')"/> -->
+	  <intercept-url pattern="/admin/**" access="isAuthenticated()" />
+     
+        <!--      Allow all other requests. In a real application you should
+             adopt a whitelisting approach where access is not allowed by default
+          -->
+        <intercept-url pattern="/**" access="permitAll" />
+        <form-login />
+        <logout logout-success-url="/home.htm" delete-cookies="JSESSIONID"/>
+        <remember-me />
+<!--
+    Uncomment to enable X509 client authentication support
+        <x509 />
+-->
+        <!-- Uncomment to limit the number of sessions a user can have-->
+        <session-management invalid-session-url="/error/timeout.jsp">
+            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" />
+        </session-management> 
+    </http>
+
+    <!-- see Util.java to generate password.
+    Usernames/Passwords are
+        rod/koala
+        dianne/emu
+        victor/monday99
+    -->
+    <beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
+
+    <authentication-manager>
+        <authentication-provider>
+            <password-encoder ref="encoder"/>
+            <user-service>
+                <user name="rod" authorities="supervisor, user, teller" password="4efe081594ce25ee4efd9f7067f7f678a347bccf2de201f3adf2a3eb544850b465b4e51cdc3fcdde" />                
+                <user name="dianne" authorities="user,teller" password="957ea522524a41cbfb649a3e293d56268f840fd5b661b499b07858bc020d6d223f912e3ab303b00f" />
+                <user name="victor" authorities="user" password="7358426e8cea17eb5b8bde5f150db84573775a39220f502c1af9bfd8b125465a217b60414871c56d" />        
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

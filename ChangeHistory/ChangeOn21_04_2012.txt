@@ -1,0 +1,24 @@
+Functions Added:
+- Implemented the Quiz status NEW, UPDATE, DISCARD
+- If there is no version number need to be updated, it return a version number 0.
+- Merge Ryan's code for the WS clientVersion to return to format like "data":[{"version" .."
+
+1. DB changes:
+- Added a new column "Status", "createDB.sql" updated.
+
+2. Java Changes
+- Implemented the Quiz status in Quiz.java as enum.
+
+3. Screen changes
+-  rename "category.ftl" to "categoryAdd.ftl"
+-  rename "quiz.ftl" to "quizAdd.ftl".
+-  rename "quizBulk.ftl" to "quizBulkAdd.ftl".
+
+4. Configure changes
+- spring.properties: change to use "root" db user with password "123", move the "imageDirPath" 
+property to "Constants.CATEGORY_IMG_DIR" since this should not be configurable.
+
+- Commented out the ehcache configure.
+
+- Deleted the "persistence.xml" under "src\main\java\META-INF\" and "src\main\resources\", only keep the
+"src\main\resources\META-INF\persistence.xml", this seems working in all environments.

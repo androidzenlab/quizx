@@ -1,0 +1,22 @@
+<#assign s=JspTaglibs["http://www.springframework.org/tags"] />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sample Web application</title>
+	<link href="${springMacroRequestContext.getContextPath()}/css/dev.css" rel="stylesheet" type="text/css" />
+		<style type="text/css" title="currentStyle">
+			@import "${springMacroRequestContext.getContextPath()}/css/demo_table.css";
+		</style>
+	<script src="${springMacroRequestContext.getContextPath()}/javascript/jquery.js" language="javascript" type="text/javascript"></script>
+	<script src="${springMacroRequestContext.getContextPath()}/javascript/jquery.dataTables.min.js" language="javascript" type="text/javascript"></script>
+	<script src="${springMacroRequestContext.getContextPath()}/javascript/quiz.js" type="text/javascript"></script>
+	${head}
+</head>
+<!-- "ex_highlight_row" is for the JQuery data table row highlight and the site mesh
+does not seem can pick the body attribute from the individual page. Site mesh 3 might
+resolve this, try class="<decorator:getProperty property="body.class">"?? -->
+<body  class="ex_highlight_row">
+  ${body}  
+</body>
+</html>

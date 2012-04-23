@@ -1,0 +1,23 @@
+em{
+	color:red;
+	font-weight:bold;	
+}
+
+.errorClass{
+	color:red;
+	font-weight:bold;	
+}
+
+.links{
+	float: right;
+	margin-right: 50px;
+}
+
+.note {
+    background-color: #FBEF99;
+    border: 1px solid #73AFB7;
+    color: green;
+    font-size: 1em;
+    width: 60%;
+    padding: 10px;
+}

@@ -1,0 +1,24 @@
+1. create db, user
+create database mydatabase character set utf8 collate utf8_bin;
+create user 'victor'@'localhost' identified by 'pass1';
+GRANT ALL ON mydatabase.* to 'victor'@'localhost'; 
+
+2. login sql by "root" or "victor" (run on command line):   
+mysql -u root -p mydatabase  (password is "abcd6789")
+mysql -u victor -p mydatabase (password is "pass1")
+
+3. backup (run on command line)
+mysqldump -uroot -pabcd6789 mydatabase > c:/quizDb.sql
+
+4. Others
+use databaseName;
+show tables;
+drop table tableName;
+desc tableName;
+select * from category order by ID into outfile 'c:/category.csv' fields terminated by ',';
+show index from quiz;
+
+5. use "explain";
+- the query "explain select name, id from category where name='china';" return "using index".
+- the query "explain select name, id from category where imageType='gif';" return "using where".
+ 

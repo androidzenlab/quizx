@@ -1,0 +1,22 @@
+- "addEmploymentForFormerStaff.ftl":
+<#assign f=JspTaglibs["http://www.springframework.org/tags/form"] />
+<#import "/spring.ftl" as spring />
+<#import "/familystart.ftl" as fsnet />
+
+mvn eclipse:clean eclipse:eclipse -Dwtpversion=2.0
+mvn install -DskipTests
+
+<#list seq as x>
+  ${x_index + 1}. ${x}<#if x_has_next>,</#if>
+</#list> 
+
+<#assign ls = ["whale", "Barbara", "zeppelin", "aardvark", "beetroot"]?sort>
+<#list ls as i>${i} </#list>  
+$(document).ready(function() {
+var oTable;
+// 'open' an information row when a row is clicked on
+$('#example tbody tr').click( function () {
+alert("adf"+this.innerHTML);
+} );
+oTable = $('#example').dataTable();
+} );

@@ -1,0 +1,9 @@
+#demo-config-menu li a:link, #demo-config-menu li a:visited {
+    border-bottom: 1px dotted #B3B3B3;
+    display: block;
+    padding: 1px 8px 4px;
+}
+base.css (line 747)
+.demos-nav a:link, .demos-nav a:visited, #demo-notes a:link, #demo-notes a:visited, #demo-source a:link, #demo-source a:visited, #widget-docs a:link, #widget-docs a:visited {
+    color: #1B75BB;
+    text-decoration: none;
